@@ -1,28 +1,27 @@
 <script setup>
-    import { ref, computed } from 'vue';
+    import { ref, reactive, computed } from 'vue';
 
     const props = defineProps({
         card: { type: Object, required: true }
     });
     
-    const emit = defineEmits(['ajustar', 'eliminar']);
+    const emit = defineEmits(['ajustar', 'eliminar', 'agregar']);
     //const ajustar = ()=> emit('ajustar', props.card.id); //comprobar
     const borrar = ()=> emit('eliminar', props.card.id);
+    const sumar = ()=> emit('agregar', props.card.id);
+
 </script>
 
 <template>
-    <section>
-        <div class="carta">
-            <h1> {{ card.nombre }} <span>{{ card.emoji }}</span> <strong>{{ card.coste }}</strong></h1>
+    <div class="carta">
+            <h1>{{ card.nombre }} <span>{{ card.emoji }}</span> <strong>{{ card.coste }}</strong></h1>
             <h2>{{ card.tipo }}</h2>
             <h3>{{ card.rareza }}</h3>
-            <button class="btn">Agregar</button>
-            <button class="btn" @click="borrar">Borrar</button>
+            <button class="btn" @click="sumar">Agregar</button>
         </div>
-    </section>
 </template>
 
-<style>
+<style scoped>
     section {
         width: 100%;
         height: 315px;
