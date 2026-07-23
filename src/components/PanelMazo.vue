@@ -14,33 +14,34 @@
     ]);
 
     function borrarCarta(id) {
-        cartasDisp.value = cartasDisp.value.filter(crd => crd.id !== id)
+        cartasDisp.value = cartasDisp.value.filter(crd => crd.id !== id);
     };
 
-    function agregarCarta(elegida) {
-        const existe = cartas.find(disponible => disponible.id === elegida.id)
+    function agregarCarta(id) {
+        const cartaOriginal = cartasDisp.value.find(c => c.id === id);
+        if (!cartaOriginal) return;
+
+        const existe = mazo.cartas.find(c => c.id === id);
         if (existe) {
-            existe.cantidad++
+            if (existe.cantidad < 2) {
+                existe.cantidad++;
+            }
         } else {
-            cartas.push({ ...elegida, cantidad: 1 })
+            mazo.cartas.push({ ...cartaOriginal, cantidad: 1 });
         }
     };
 
 </script>
 
 <template>
-    <StatsMazo 
-        v-for="parte in mazo.cartas"
-        :key="parte.id"
-        :card="parte"
-        @eliminar="borrarCarta"
-    />
+    <StatsMazo :card="mazo.cartas" />
+
     <section>
         <CartaMazo 
             v-for="carta in cartasDisp"
             :key="carta.id"
             :card="carta"
-            @sumar="agregarCarta"
+            @agregar="agregarCarta"
         />
     </section>
 </template>
