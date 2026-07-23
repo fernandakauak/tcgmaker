@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import PanelMazo from './components/PanelMazo.vue';
 </script>
 
 <template>
-  <HelloWorld />
+  <PanelMazo />
 </template>
