@@ -48,9 +48,9 @@ const cartasFiltradas = computed(() => {
       :carta="carta" 
       @agregar="emit('agregar', $event)"
     />
-  </div>
-  <div v-if="cartasFiltradas.length === 0" class="sin-resultados">
-    🚫 Ninguna carta coincide con los filtros
+    <div v-if="cartasFiltradas.length === 0" class="sin-resultados">
+      🚫 Ninguna carta coincide con los filtros
+    </div>
   </div>
 </template>
 
@@ -63,12 +63,15 @@ const cartasFiltradas = computed(() => {
   box-sizing: border-box;
   background-color: white;
   border-radius: 15px;
-}
-.sin-resultados {
-  padding: 40px 20px;
-  text-align: center;
-  color: #6b7280;
-  font-size: 1.2rem;
+  min-height: 140px;
 }
 
+.sin-resultados {
+  grid-column: 1 / -1;
+  padding: 30px 10px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
 </style>

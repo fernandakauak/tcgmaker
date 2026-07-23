@@ -94,64 +94,77 @@ const aplicarFiltros = () => {
 </template>
 
 <style scoped>
+
+
 .buscador-filtros {
-  background: #f9fafb;
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 20px;
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 16px;
   border: 2px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .seccion-busqueda {
   display: flex;
   align-items: center;
-  gap: 10px;
+  width: 100%;
 }
 
 .input-busqueda {
-  flex: 1;
-  padding: 12px 16px;
+  width: 100%;
+  padding: 8px 12px;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  font-size: lakdaksdljaskdaskd;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 .input-busqueda:focus {
   outline: none;
   border-color: #2374ff;
-  box-shadow: 0 0 0 4px rgba(35, 116, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(35, 116, 255, 0.1);
 }
 
 .seccion-filtros {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .filtro-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  flex: 1;
+  min-width: 90px;
+  box-sizing: border-box;
 }
 
 .filtro-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #6b7280;
 }
 
 .filtro-select,
 .filtro-input {
-  padding: 10px 14px;
+  padding: 6px 10px;
   border: 2px solid #e5e7eb;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
   background: white;
-  transition: all 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.2s ease;
 }
 
 .filtro-select:focus,
@@ -161,48 +174,40 @@ const aplicarFiltros = () => {
   box-shadow: 0 0 0 3px rgba(35, 116, 255, 0.1);
 }
 
-.filtro-select {
-  min-width: 160px;
-}
-
-.filtro-input {
-  width: 120px;
-}
-
 .seccion-limpiar {
   display: flex;
   justify-content: flex-end;
+  margin-top: 2px;
 }
 
 .btn-limpiar {
-  padding: 10px 20px;
+  padding: 6px 14px;
   background: #ef4444;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-limpiar:hover {
   background: #dc2626;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .seccion-filtros {
     flex-direction: column;
+    gap: 8px;
   }
   
-  .filtro-select,
-  .filtro-input {
+  .filtro-item {
     width: 100%;
   }
-  
+
   .seccion-limpiar {
     justify-content: center;
   }
