@@ -5,3 +5,5 @@ import PanelMazo from './components/PanelMazo.vue';
 <template>
   <PanelMazo />
 </template>
+
+<style></style>
