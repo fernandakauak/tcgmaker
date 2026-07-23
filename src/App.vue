@@ -18,7 +18,10 @@ const cartas = ref([
   { id: 12, nombre: "Daft Punk", habilidad: "Around the World", emoji: "🤖", tipo: "Trampa", coste: 4, rareza: "Rara" },
   { id: 13, nombre: "Deftones", habilidad: "Change", emoji: "🌊", tipo: "Criatura", coste: 6, rareza: "Rara" },
   { id: 14, nombre: "Aphex Twin", habilidad: "Windowlicker", emoji: "🌀", tipo: "Hechizo", coste: 7, rareza: "Épica" },
-  { id: 15, nombre: "Boards of Canada", habilidad: "Dayvan Cowboy", emoji: "📼", tipo: "Trampa", coste: 1, rareza: "Común" }
+  { id: 15, nombre: "Boards of Canada", habilidad: "Dayvan Cowboy", emoji: "📼", tipo: "Trampa", coste: 1, rareza: "Común" },
+  { id: 16, nombre: "Causa de Muerte", habilidad: "Paranoia", emoji: "🤪", tipo: "Hechizo", coste: 8, rareza: "Rara" },
+  { id: 17, nombre: "Aiobahn", habilidad: "INTERNET YAMERO", emoji: "🖥️", tipo: "Trampa", coste: 10, rareza: "Épica" },
+  { id: 18, nombre: "Napalm Death", habilidad: "You Suffer", emoji: "🔪", tipo: "Criatura", coste: 4, rareza: "Común" }
 ]);
 
 const mazo = ref([]);
